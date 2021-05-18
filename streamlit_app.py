@@ -10,5 +10,5 @@ xlsx = df.to_excel(excel_path)
 
 data = open(excel_path, 'rb').read()
 b64 = base64.b64encode(data).decode('UTF-8')
-linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="myfilename.xlsx">Download excel file</a>'
+href = f'<a href="data:file/xlsx;base64,{b64}" download="Example.xlsx">Download xlsx File</a>'
 st.markdown(linko, unsafe_allow_html=True)
